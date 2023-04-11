@@ -1,0 +1,16 @@
+.block-social{
+    p{
+        margin-bottom: 20px;
+        @include typo(18px, 1.44, 400);
+    }
+    li{
+        display: inline-block;
+        margin-right: 32px;
+        img{
+            height: 40px;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}

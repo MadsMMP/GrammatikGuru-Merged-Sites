@@ -1,0 +1,61 @@
+.posttype{
+    .box{
+        @include d-flex;
+        align-items: center;
+        justify-content: space-between;
+        @include border-radius(3px);
+        background-color: var(--sala-shade-background, $shade_background);
+        padding: 32px;
+        margin-bottom: 12px;
+        .sub{
+            font-weight: 500;
+            color: var(--sala-neutral-dark, $neutral_dark);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .title{
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .desc{
+            font-size: 18px;
+        }
+    }
+    &.layout-02{
+        .box{
+            padding: 32px 0;
+            background-color: transparent;
+            margin: 0;
+            border-top: 1px solid var(--sala-border-line, $border_line);
+        }
+    }
+}
+.section-posttype{
+    .action{
+        p{
+            @include typo( 24px, 1.33, 600 );
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+        a{
+            display: inline-block;
+            margin-top: 24px;
+            font-weight: 500;
+            color: var(--sala-primary-navy, $primary_navy);
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .posttype .box{
+        flex-direction: column;
+        .content{
+            text-align: center;
+        }
+        .button-wrap{
+            margin-top: 24px;
+        }
+    }
+}

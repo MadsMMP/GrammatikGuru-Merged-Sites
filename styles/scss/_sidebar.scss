@@ -1,0 +1,111 @@
+.sidebar{
+    .widget{
+        margin-bottom: 32px;
+        .widget-title{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .widget-search{
+        form{
+            position: relative;
+        }
+        input{
+            font-size: 15px;
+            color: var(--sala-neutral-dark, #111111);
+            width: 100%;
+            outline: none;
+            border: 1px solid var(--sala-shade-background, #f9f9f9);
+            background-color: var(--sala-shade-background, #f9f9f9);
+            border-radius: 5px;
+            padding: 0 68px 0 20px;
+            height: 48px;
+        }
+        button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0;
+            border: 0;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: none;
+            transform: none;
+            background: transparent;
+            font-size: 24px;
+            color: var(--sala-neutral-dark, #111111);
+        }
+    }
+    .widget-category{
+        li{
+            margin-bottom: 12px;
+            a{
+                font-size: 16px;
+                font-weight: 500;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .widget-latest{
+        .post{
+            margin-bottom: 16px;
+        }
+        .entry-date{
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .entry-title h4{
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    .widget-tag{
+        ul{
+            letter-spacing: -0.3em;
+            li{
+                letter-spacing: normal;
+                display: inline-block;
+                margin-right: 12px;
+                margin-bottom: 12px;
+                a{
+                    padding: 12px;
+                    @include border-radius(3px);
+                    display: inline-block;
+                    background-color: var(--sala-shade-background, #f9f9f9);
+                }
+            }
+        }
+    }
+    .widget-about{
+        a{
+            color: var(--sala-primary-navy, #0057fc);
+        }
+    }
+    .widget-price{
+        .field-submit{
+            @include d-flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input[type="submit"]{
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+            box-shadow: 0;
+            color: var(--sala-neutral-dark, $neutral_dark);
+            &:focus{
+                outline: 0;
+                outline-offset: inherit;
+            }
+        }
+    }
+}

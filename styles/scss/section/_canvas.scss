@@ -1,0 +1,40 @@
+.block-canvas{
+    .circle-progress{
+        position: relative;
+        height: 120px;
+        margin-right: 24px;
+    }
+    .item{
+        @include d-flex;
+        align-items: center;
+        padding: 0 100px;
+        margin-bottom: 30px;
+        .title{
+            @include typo(24px, 1.33, 600);
+            margin-bottom: 12px;
+        }
+    }
+    .inner-content{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        left: 5px;
+        bottom: 5px;
+        @include d-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--sala-border-line, $border_line);
+        @include border-radius(50%);
+        .chart-number{
+            @include typo(24px, 1.33, 600);
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .block-canvas{
+        .item{
+            padding: 0;
+        }
+    }
+}

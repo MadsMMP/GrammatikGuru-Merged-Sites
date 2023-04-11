@@ -1,0 +1,44 @@
+.block-chart{
+    @include d-flex;
+    align-items: center;
+    .pie-chart{
+        @include flex-w(350px);
+        height: 350px;
+    }
+    .chart-list{
+        padding-left: 80px;
+        li{
+            font-size: 18px;
+            padding-left: 50px;
+            position: relative;
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        span{
+            width: 30px;
+            height: 8px;
+            @include border-radius(4px);
+            display: block;
+            position: absolute;
+            top: 6px;
+            left: 0;
+        }
+    }
+}
+@media (max-width:768px) {
+    .block-chart{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        .pie-chart{
+            @include flex-w(240px);
+            height: 240px;
+        }
+        .chart-list{
+            padding-left: 0;
+            margin-top: 32px;
+        }
+    }
+}

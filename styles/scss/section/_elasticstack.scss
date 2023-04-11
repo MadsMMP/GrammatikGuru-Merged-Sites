@@ -1,0 +1,111 @@
+.block-elasticstack{
+    position: relative;
+    min-height: 370px;
+    .elasticstack{
+        position: relative;
+        perspective: 1200px;
+        perspective-origin: 50% 200%;
+        width: 100%;
+    }
+    .item{
+        @include d-flex;
+        align-items: stretch;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: pointer;
+        visibility: visible;
+        transform-origin: 50% -10%;
+        transform: translate3d(0, 0, -180px);
+        box-shadow: 0 10px 7px -7px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.1);
+        background-color: var(--sala-neutral-white, $neutral_white);
+        min-height: 370px;
+        margin-top: 15px;
+        &.animate{
+			-webkit-transition: all 0.3s ease-out;
+			transition: all 0.3s ease-out;
+		}
+
+		&.move-back{
+			-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1);
+			-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
+			transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
+		}
+    }
+    .thumb,
+    .content{
+        @include flex-w(50%);
+        position: relative;
+    }
+    .thumb{
+        img{
+            height: 370px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .content{
+        padding: 40px 40px 40px 60px;
+        p{
+            @include typo(18px, 1.33, 400);
+            margin-bottom: 12px;
+            height: calc(100% - 60px);
+            overflow: hidden;
+        }
+        .name{
+            @include typo(18px, 1.33, 600);
+            color: var(--sala-neutral-dark, $neutral_dark);
+            margin-bottom: 4px;
+        }
+    }
+    .quote{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        z-index: -1;
+    }
+    .elasticstack-nav .icon{
+        position: absolute;
+        top: 40%;
+        cursor: pointer;
+    }
+    .elasticstack-prev{
+        left: -100px;
+        right: auto;
+    }
+    .elasticstack-next{
+        right: -100px;
+        left: auto;
+    }
+}
+@media (max-width: 992px) {
+    .block-elasticstack{
+        .elasticstack-nav{
+            display: none;
+        }
+        .item{
+            flex-direction: column;
+            display: block;
+        }
+        .thumb{
+            @include flex-w(100%);
+            img{
+                height: 370px;
+            }
+        }
+        .content{
+            @include flex-w(100%);
+            padding: 30px;
+            p{
+                height: auto;
+            }
+        }
+    }
+}
+
+.dark-bg-right {
+    width: calc(763.5px);
+    max-width: calc(763.5px);
+}

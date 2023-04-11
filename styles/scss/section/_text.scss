@@ -1,0 +1,37 @@
+.section-text{
+    .text-left{
+        h2{
+            @include typo( 40px, 1.2, 600 );
+        }
+        p{
+            @include typo( 24px, 1.33, 500 );
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+    }
+    .text-right{
+        p{
+            @include typo( 18px, 1.44, 400 );
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .section-text{
+        .text-left{
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .section-text{
+        .text-left{
+            h2{
+                font-size: 28px
+            }
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+}

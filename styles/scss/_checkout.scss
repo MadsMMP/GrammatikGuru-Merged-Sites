@@ -1,0 +1,155 @@
+.notices{
+    margin-bottom: 40px;
+    .notice{
+        padding: 18px;
+        @include d-flex;
+        align-items: center;
+        background-color: var(--sala-shade-background, $shade_background);
+        @include border-radius(3px);
+        margin-bottom: 16px;
+        i{
+            font-size: 20px;
+            margin-right: 16px;
+        }
+        span{
+            margin-right: 4px;
+        }
+        a{
+            color: var(--sala-primary-navy, $primary_navy);
+            &:hover{
+                color: var(--sala-tone-blue, $tone_blue);
+            }
+        }
+    }
+}
+
+form.checkout{
+    .title{
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    label{
+        display: inline-block;
+        color: var(--sala-neutral-dark, $neutral_dark);
+        margin-bottom: 8px;
+    }
+    input{
+        width: 100%;
+    }
+    .field-checkbox input, .field-radio input{
+        width: auto;
+    }
+    .field-input{
+        margin-bottom: 20px;
+    }
+    .nice-select{
+        float: none;
+        width: 100%;
+        background-color: var(--sala-shade-background, $shade_background);
+        height: 48px;
+        line-height: 46px;
+        padding: 0 16px;
+        &:after{
+            right: 20px;
+        }
+        .list{
+            width: 100%;
+        }
+    }
+    .payment{
+        max-width: 470px;
+        .payment-item{
+            margin-bottom: 32px;
+        }
+        input[type="submit"]{
+            width: auto;
+            &:hover{
+                background-color: var(--sala-tone-blue, $tone_blue);
+            }
+        }
+    }
+    .order{
+        .content{
+            padding: 32px;
+            background-color: var(--sala-shade-background, $shade_background);
+        }
+        table{
+            width: 100%;
+        }
+        .table-price{
+            text-align: right;
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+        thead{
+            th{
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: var(--sala-neutral-dark, $neutral_dark);
+                padding: 0 0 10px;
+            }
+        }
+        tbody{
+            td{
+                padding: 12px 0;
+            }
+        }
+        tfoot{
+            td{
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--sala-neutral-dark, $neutral_dark);
+                padding: 24px 0 0;
+            }
+        }
+    }
+}
+
+form.checkout-coupon{
+    background-color: var(--sala-shade-background, $shade_background);
+    padding: 16px;
+    display: none;
+    p{
+        margin-bottom: 16px;
+    }
+    input[type="text"]{
+        background-color: var(--sala-neutral-white, $neutral_white);
+        margin-right: 8px;
+    }
+}
+
+@media (max-width:992px) {
+    form.checkout{
+        .order{
+            margin-top: 30px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    form.checkout-coupon {
+        input[type="text"]{
+            width: 100%;
+            margin: 0 0 8px 0;
+        }
+        input[type="submit"]{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .notices .notice {
+        flex-wrap: wrap;
+        a{
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+        }
+    }
+    form.checkout .order .content{
+        padding: 32px 15px;
+    }
+}

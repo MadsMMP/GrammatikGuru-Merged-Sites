@@ -1,0 +1,38 @@
+.full-plan{
+    thead tr{
+        vertical-align: top;
+        .price{
+            @include typo(16px, 1.5, 400);
+            color: var(--sala-neutral-normal, $neutral_normal);
+            text-transform: none;
+            margin-top: 4px;
+        }
+    }
+    .colspan-full{
+        font-weight: 500;
+        text-transform: uppercase;
+        &:before{
+            content: '';
+            width: 8px;
+            height: 8px;
+            display: block;
+            @include border-radius(50%);
+            background-color: var(--sala-primary-navy, $primary_navy);
+            display: inline-block;
+            vertical-align: 2px;
+            margin-right: 12px;
+        }
+    }
+    i{
+        font-size: 24px;
+        color: var(--sala-alway-neutral-white);
+    }
+    td.is-active{
+        i{
+            color: var(--sala-primary-navy, $primary_navy);
+        }
+    }
+    tr.odd{
+        background-color: var(--sala-shade-background, $shade_background);
+    }
+}

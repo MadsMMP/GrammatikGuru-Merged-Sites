@@ -1,0 +1,32 @@
+.block-countdown{
+    @include d-flex;
+    align-items: center;
+    justify-content: center;
+    .item{
+        text-align: left;
+        &:last-child{
+            .number:after{
+                content: '';
+                display: none;
+            }
+        }
+    }
+    .number{
+        @include typo(56px, 1.11, 600);
+        color: var(--sala-neutral-dark, $neutral_dark);
+        &:after{
+            content: ':';
+            margin: 0 20px;
+        }
+    }
+    .text{
+        display: block;
+        color: var(--sala-neutral-dark, $neutral_dark);
+    }
+    &.color-white{
+        .number,
+        .text{
+            color: var(--sala-alway-white, $neutral_white);
+        }
+    }
+}

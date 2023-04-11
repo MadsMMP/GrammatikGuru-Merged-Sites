@@ -1,0 +1,229 @@
+.accordion-item{
+    margin-bottom: 30px;
+    position: relative;
+    .title{
+        @include typo(18px, 1.44, 500);
+        margin-bottom: 16px;
+        i{
+            font-size: 24px;
+            margin-right: 12px;
+            color: var(--sala-primary-navy, $primary_navy);
+            position: absolute;
+            top: 1px;
+            left: 0;
+        }
+    }
+    .content{
+        line-height: 1.5;
+    }
+}
+
+.block-accordion{
+    &.layout-01 .accordion-item{
+        border: 0;
+        padding-right: 65px;
+        padding-left: 36px;
+    }
+    &.layout-02 .accordion-item{
+        @include border-radius(3px);
+        border: 0;
+        .title{
+            position: relative;
+            padding-right: 30px;
+            cursor: pointer;
+            margin-bottom: 0;
+            padding: 20px 50px 20px 24px;
+            &:after{
+                content: '\f107';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                position: absolute;
+                top: 20px;
+                right: 24px;
+                @include transition(all 0.3s);
+            }
+        }
+        .content{
+            display: none;
+            padding: 0 24px 24px;
+        }
+        &.is-active{
+            .title:after{
+                @include transform( rotate(180deg) );
+            }
+        }
+        &.border-line{
+            border: 1px solid var(--sala-border-line, $border_line);
+        }
+    }
+    &.layout-03 .accordion-item{
+        padding: 24px 24px 24px 68px;
+        border: 1px solid transparent;
+        @include border-radius(10px);
+        margin-bottom: 0;
+        &.is-active{
+            border-color: var(--sala-primary-navy, $primary_navy);
+        }
+        .title{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        &:before{
+            content: '';
+            width: 24px;
+            height: 24px;
+            @include border-radius(50%);
+            background-color: var(--sala-primary-navy, $primary_navy);
+            display: block;
+            position: absolute;
+            top: 28px;
+            left: 24px;
+        }
+        &:nth-child(3n + 2)::before{
+            background-color: var(--sala-tone-red, $tone_red);
+        }
+        &:nth-child(3n)::before{
+            background-color: var(--sala-tone-yellow, $tone_yellow);
+        }
+        .content{
+            display: none;
+            margin-top: 16px;
+        }
+    }
+    &.layout-04 .accordion-item{
+        .number{
+            @include typo(14px, 1.2, 500);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--sala-neutral-dark, $neutral_dark);
+        }
+        .title{
+            @include typo(24px, 1.33, 600);
+            position: relative;
+            padding-right: 30px;
+            cursor: pointer;
+            &:hover{
+                color: var(--sala-primary-navy, $primary_navy);
+            }
+            &:after{
+                content: '\f107';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                position: absolute;
+                top: -4px;
+                right: 0;
+                @include transition(all 0.3s);
+            }
+        }
+        .content{
+            display: none;
+        }
+        .inner{
+            padding: 16px;
+        }
+        &.is-active{
+            .number{
+                border-color: var(--sala-primary-navy, $primary_navy);
+            }
+            .title:after{
+                @include transform( rotate(180deg) );
+                color: var(--sala-primary-navy, $primary_navy);
+            }
+        }
+    }
+    &.layout-05 .accordion-item{
+        @include border-radius(3px);
+        border: 0;
+        background-color: var(--sala-shade-background, $shade_background);
+        @include border-radius(5px);
+        overflow: hidden;
+        .title{
+            position: relative;
+            padding-right: 30px;
+            cursor: pointer;
+            margin-bottom: 0;
+            padding: 20px 50px 20px 24px;
+            @include d-flex;
+            align-items: center;
+            i{
+                width: 60px;
+                height: 60px;
+                @include border-radius(50%);
+                background-color: var(--sala-neutral-white, $neutral_white);
+                @include d-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 36px;
+                position: static;
+                margin-right: 20px;
+            }
+            &:after{
+                content: '\f107';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                position: absolute;
+                top: 36px;
+                right: 24px;
+                @include transition(all 0.3s);
+            }
+        }
+        .content{
+            display: none;
+            padding: 0 24px 24px 102px;
+        }
+        &.is-active{
+            .title:after{
+                @include transform( rotate(180deg) );
+            }
+        }
+        &.border-line{
+            border: 1px solid var(--sala-border-line, $border_line);
+        }
+    }
+    &.layout-06 .accordion-item{
+        border-top: 1px solid var(--sala-border-line, $border_line);
+        margin-top: 24px;
+        padding-top: 24px;
+        margin-bottom: 0;
+        &:first-child{
+            border-top: 0;
+        }
+        .title{
+            cursor: pointer;
+            @include d-flex;
+            justify-content: space-between;
+            &:after{
+                content: '\f067';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+        }
+        .content{
+            display: none;
+        }
+        &.is-active{
+            .title:after{
+                content: '\f068';
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .accordion-item{
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .block-accordion{
+        &.layout-03{
+            .accordion-item .title{
+                font-size: 18px;
+            }
+        }
+    }
+}

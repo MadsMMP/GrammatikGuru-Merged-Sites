@@ -1,0 +1,9 @@
+.shop-left{
+    padding-right: 30px;
+}
+
+@media (max-width: 992px) {
+    .shop-left{
+        padding-right: 0;
+    }
+}

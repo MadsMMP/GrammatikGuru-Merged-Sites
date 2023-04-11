@@ -1,0 +1,71 @@
+.block-trial{
+    &.layout-01{
+        .image-top{
+            width: 36px;
+            margin-bottom: 60px;
+        }
+        .sub{
+            @include typo(16px, 1.5, 600);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+        .title{
+            @include typo(56px, 1.1, 600);
+            margin-top: 12px;
+        }
+        .desc{
+            @include typo(18px, 1.4, 400);
+            margin-top: 24px;
+        }
+        .button-wrap{
+            margin-top: 40px;
+        }
+        .apps{
+            justify-content: center;
+            margin-top: 40px;
+        }
+    }
+    &.layout-02{
+        .title{
+            @include typo(56px, 1.11, 600);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            img{
+                position: absolute;
+                top: 100%;
+                right: 4%;
+                width: 20%;
+            }
+        }
+        .note{
+            margin-bottom: 35px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .block-trial{
+        .layout-01{
+            img{
+                margin-bottom: 30px;
+            }
+            .title{
+                font-size: 32px;
+            }
+            .desc{
+                margin-bottom: 20px;
+            }
+        }
+        &.layout-02{
+            .title{
+                font-size: 32px;
+                margin-bottom: 30px;
+                img{
+                    display: none;
+                }
+            }
+        }
+    }
+}

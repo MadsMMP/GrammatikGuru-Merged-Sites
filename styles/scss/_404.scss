@@ -1,0 +1,31 @@
+.content-404{
+    h1{
+        @include typo(56px, 1.11, 600);
+        margin-bottom: 24px;
+    }
+    p{
+        font-size: 24px;
+        line-height: 1.33;
+    }
+    a{
+        color: var(--sala-primary-navy, $primary_navy);
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .content-404{
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .content-404{
+        h1{
+            font-size: 32px;
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+}

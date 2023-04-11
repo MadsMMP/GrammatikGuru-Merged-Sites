@@ -1,0 +1,48 @@
+.dl-switcher{
+    display: inline-block;
+    position: relative;
+    @include transform(rotate(90deg) translate(0%, -180%));
+    position: fixed;
+    top: 47%;
+    right: 25px;
+    cursor: pointer;
+    z-index: 9;
+    .item{
+        background-color: var(--sala-shade-border-line, #dddddd);
+        display: inline-block;
+        @include border-radius(14px);
+        .state{
+            display: inline-block;
+            font-size: 16px;
+            padding: 4px 12px;
+            font-weight: 500;
+            color: var(--sala-alway-dark, #111111);
+            &:first-child{
+                padding-right: 8px;
+            }
+            &:last-child{
+                padding-left: 8px;
+            }
+        }
+    }
+    .toddler{
+        display: inline-block;
+        font-size: 16px;
+        padding: 4px 12px;
+        font-weight: 500;
+        color: var(--sala-neutral-dark, #111111);
+        background-color: var(--sala-neutral-white, #ffffff);
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include border-radius(14px);
+        @include transition(all 0.3s);
+        @include box-shadow(-1px 0 4px rgb(23 22 26 / 5%));
+        z-index: 1;
+    }
+    &.sala-dark-scheme{
+        .toddler{
+            right: 50%;
+        }
+    }
+}

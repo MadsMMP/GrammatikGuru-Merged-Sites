@@ -1,0 +1,66 @@
+.block-product{
+    padding: 40px;
+    @include border-radius(10px);
+    background-color: var(--sala-neutral-white, $neutral_white);
+    .badge{
+        position: static;
+        font-size: 16px;
+        @include border-radius(20px);
+        background-color: var(--sala-tone-yellow, $tone_yellow);
+        color: var(--sala-alway-dark, $neutral_dark);
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+    .title{
+        @include typo(40px, 1.2, 600);
+        margin-bottom: 16px;
+    }
+    .price{
+        @include typo(32px, 1.25, 500);
+        margin-bottom: 20px;
+        ins{
+            text-decoration: none;
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+    }
+    .desc{
+        font-size: 18px;
+        line-height: 1.44;
+        margin-bottom: 32px;
+    }
+    .button{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .list{
+        @include d-flex;
+        align-items: center;
+        li{
+            @include flex-w(50%);
+        }
+        span{
+            @include typo(16px, 1.5, 500);
+            color: var(--sala-neutral-dark, $neutral_dark);
+        }
+        svg{
+            margin-right: 16px;
+        }
+    }
+}
+@media (max-width:576px) {
+    .block-product{
+        padding: 20px;
+        .list{
+            flex-direction: column;
+            align-items: flex-start;
+            li{
+                @include flex-w(100%);
+                margin-bottom: 20px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

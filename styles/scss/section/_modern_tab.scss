@@ -1,0 +1,36 @@
+.block-modern-tab{
+    .tab-nav{
+        display: block;
+        padding: 28px;
+        background-color: var(--sala-neutral-white, $neutral_white);
+        border: 1px solid var(--sala-border-line, $border_line);
+        @include border-radius(5px);
+        margin-bottom: 8px;
+        .title{
+            display: block;
+            color: var(--sala-neutral-dark, $neutral_dark);
+            @include typo(24px, 1.33, 600);
+            margin-bottom: 0;
+        }
+        .content{
+            margin-top: 8px;
+            display: none;
+        }
+        &.is-active{
+            background-color: var(--sala-primary-navy, $primary_navy);
+            .title{
+                color: var(--sala-alway-white, $neutral_white);
+            }
+            .content{
+                display: block;
+                color: var(--sala-alway-white, $neutral_white);
+            }
+        }
+    }
+    .tab-content{
+        display: none;
+        &.is-active{
+            display: block;
+        }
+    }
+}

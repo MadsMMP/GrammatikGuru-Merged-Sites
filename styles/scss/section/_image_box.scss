@@ -1,0 +1,243 @@
+.block-image-box{
+    &.layout-01{
+        .image-box{
+            @include d-flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        .thumbnail{
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 270px;
+            flex: 0 0 270px;
+            max-width: 270px;
+            height: 270px;
+            border: 1px solid var(--sala-border-line, $border_line);
+            @include border-radius(5px);
+            padding: 20px;
+            @include d-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content{
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 calc(100% - 300px);
+            flex: 0 0 calc(100% - 300px);
+            max-width: calc(100% - 300px);
+            padding-right: 90px;
+        }
+        .title{
+            @include typo(32px, 1.25, 500);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+            &:after{
+                content: '';
+                height: 8px;
+                position: absolute;
+                left: 0;
+                bottom: 6px;
+                background-color: var(--sala-tone-yellow, $tone_yellow);
+                display: block;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+        .desc{
+            @include typo(18px, 1.44, 400);
+            margin-bottom: 18px;
+        }
+    }
+    &.layout-02{
+        padding: 60px;
+        @include border-radius(8px);
+        text-align: center;
+        & + .block-image-box.layout-02{
+            margin-top: 60px;
+        }
+        .title{
+            @include typo(32px, 1.33, 600);
+            margin-bottom: 12px;
+        }
+        .desc{
+            @include typo(18px, 1.11, 400);
+            margin-bottom: 40px;
+        }
+        img{
+            @include border-radius(8px);
+        }
+    }
+    &.layout-03{
+        .item{
+            text-align: center;
+            .thumb{
+                padding: 64px;
+                margin-bottom: 36px;
+                @include border-radius(8px);
+                &.background-01{
+                    background-image: linear-gradient(180deg, rgba(0,87,252,0.15) 0%, rgba(244,51,25,0.15) 100%);
+                }
+                &.background-02{
+                    background-image: linear-gradient(180deg, rgba(96,77,224,0.15) 0%, rgba(255,204,0,0.15) 100%);
+                }
+            }
+            .title{
+                @include typo(32px, 1.33, 600);
+                margin-bottom: 12px;
+            }
+            .desc{
+                @include typo(18px, 1.33, 400);
+            }
+        }
+    }
+    &.layout-04{
+        @include d-flex;
+        .image-box{
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--sala-border-line, $border_line);
+        }
+        .thumbnail{
+            img{
+                width: 164px;
+                height: 164px;
+                object-fit: contain;
+                margin-bottom: 30px;
+            }
+            &.w80 img{
+                width: 80px;
+                height: 80px
+            }
+        }
+        .title{
+            @include typo(24px, 1.33, 500);
+            margin-bottom: 10px;
+            &.w600{
+                font-weight: 600;
+            }
+        }
+        .desc{
+            margin-bottom: 26px;
+        }
+    }
+    &.layout-05{
+        .image-box{
+            margin-bottom: 30px;
+            &:hover{
+                .thumbnail{
+                    @include transform(translateY(-10px));  
+                    z-index: 1;
+                }
+            }
+        }
+        .thumbnail{
+            @include box-shadow(0 0 40px rgba(51, 51, 51, 0.1));
+            @include border-radius(5px);
+            @include transition(all 0.3s);
+            position: relative;
+        }
+        .badge{
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--sala-alway-white, $neutral_white);
+            position: absolute;
+            @include d-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            padding-left: 8px;
+            padding-right: 8px;
+            top: 30px;
+            right: 0;
+            left: auto;
+            @include border-radius(50%);
+            z-index: 8;
+            @include transform(translateX(50%));
+            @include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.15));
+            background-color: var(--sala-tone-red, $tone_red);
+            &-new{
+                background-color: var(--sala-primary-navy, $primary_navy);
+            }
+        }
+        .content{
+            margin-top: 20px;
+        }
+        .title{
+            text-align: center;
+            @include typo(18px, 1.5, 500);
+        }
+    }
+    &.background-01{
+        background-image: linear-gradient(180deg, rgba(0,87,252,0.15) 0%, rgba(244,51,25,0.15) 100%);
+    }
+    &.background-02{
+        background-image: linear-gradient(180deg, rgba(0,87,252,0.15) 0%, rgba(17,17,17,0.15) 100%);
+    }
+    &.background-03{
+        background-image: linear-gradient(180deg, rgba(96,77,224,0.15) 0%, rgba(255,204,0,0.15) 100%);
+    }
+    &.background-04{
+        background-image: linear-gradient(180deg, rgba(0,87,252,0.15) 0%, rgba(45,203,72,0.15) 100%);
+    }
+}
+@media (max-width: 992px) {
+    .block-image-box{
+        &.layout-02 + .block-image-box.layout-02{
+            margin-top: 32px;
+        }
+        &.layout-03{
+            .item{
+                margin-bottom: 30px;
+            }
+        }
+        &.layout-04{
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .block-image-box{
+        &.layout-01{
+            .image-box{
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+            .thumbnail{
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                height: 100%;
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .content{
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+        &.layout-02{
+            padding: 30px;
+        }
+        &.layout-04{
+            .image-box{
+                padding: 30px 20px;
+            }
+        }
+        &.layout-05{
+            .badge{
+                top: 20px;
+                @include transform(translateX(-20px));
+            }
+        }
+    }
+}

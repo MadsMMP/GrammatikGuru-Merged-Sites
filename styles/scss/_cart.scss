@@ -1,0 +1,119 @@
+.cart-table{
+    width: 100%;
+    border-spacing: 0 15px;
+    border-collapse: separate;
+    margin-bottom: 16px;
+    th{
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0 16px;
+    }
+    td.product-thumbnail{
+        img{
+            width: 64px;
+            height: 64px;
+        }
+    }
+    td.product-name{
+        width: 40%;
+        h4{
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    tbody tr{
+        background-color: var(--sala-shade-background, $shade_background);
+        td{
+            padding: 16px;
+        }
+    }
+    .quantity{
+        max-width: 110px;
+    }
+}
+
+.cart-form{
+    input[name="coupon"]{
+        max-width: 200px;
+        margin-right: 10px;
+    }
+    input[type="submit"]{
+        background-color: var(--sala-neutral-dark, $neutral_dark);
+        color: var(--sala-neutral-white, $neutral_white);
+        &:hover{
+            background-color: var(--sala-primary-navy, $primary_navy);
+            color: var(--sala-alway-white, $neutral_white);
+        }
+    }
+}
+
+.cart-totals{
+    @include d-flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+    .cart-total{
+        padding: 32px;
+        background-color: var(--sala-shade-background, $shade_background);
+        @include flex-w(370px);
+        .title{
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+        table{
+            width: 100%;
+            margin-bottom: 8px;
+            td{
+                padding: 8px 0;
+            }
+            .table-price{
+                text-align: right;
+                font-weight: 500;
+                color: var(--sala-neutral-dark, $neutral_dark);
+            }
+            tfoot td{
+                padding-top: 46px;
+            }
+        }
+        a.button{
+            padding: 0 10px;
+            line-height: 44px;
+            font-weight: 500;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    table.cart-table {
+        .quantity{
+            margin: 0 0 0 auto;
+            input[type="number"]{
+                background-color: var(--sala-neutral-white, $neutral_white);
+            }
+        }
+    }
+    .cart-form{
+        .field-group{
+            flex-direction: column;
+            input{
+                width: 100%;
+                margin: 0;
+                max-width: 100%;
+                margin-bottom: 12px;
+            }
+            .field-input{
+                width: 100%;
+            }
+        }
+    }
+    .cart-totals{
+        margin-top: 16px;
+        .cart-total{
+            @include flex-w(100%);
+        }
+    }
+}

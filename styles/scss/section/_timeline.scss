@@ -1,0 +1,318 @@
+.block-timeline{
+    &.layout-01{
+        position: relative;
+        padding: 30px 0;
+        &:before{
+            content: '';
+            width: 4px;
+            position: absolute;
+            top: 0;
+            left: 8px;
+            height: 100%;
+            @include border-radius(2px);
+            background-color: var(--sala-alway-dark, $neutral_dark);
+        }
+        .item{
+            margin-bottom: 30px;
+            padding-left: 85px;
+            position: relative;
+            &:before{
+                content: '';
+                width: 20px;
+                height: 20px;
+                @include border-radius(50%);
+                border: 4px solid var(--sala-alway-dark, $neutral_dark);
+                position: absolute;
+                top: 6px;
+                left: 0;
+                background-color: var(--sala-tone-yellow, $tone_yellow);
+            }
+            &:after{
+                content: '';
+                width: 30px;
+                height: 2px;
+                display: block;
+                background-color: var(--sala-alway-dark, $neutral_dark);
+                position: absolute;
+                left: 42px;
+                top: 15px;
+            }
+            .date{
+                @include typo(24px, 1.33, 500);
+                margin-bottom: 10px;
+                color: var(--sala-alway-dark, $neutral_dark);
+            }
+            .title{
+                @include typo(32px, 1.25, 600);
+                margin-bottom: 10px;
+                color: var(--sala-alway-dark, $neutral_dark);
+            }
+            .desc{
+                font-size: 18px;
+                color: var(--sala-alway-dark, $neutral_dark);
+            }
+        } 
+    }
+    &.layout-02{
+        position: relative;
+        &::before{
+            content: '';
+            width: 2px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -1px;
+            height: 100%;
+            background-color: var(--sala-border-line, $border_line);
+        }
+        .item{
+            @include d-flex;
+            &:last-child{
+                margin-bottom: 0
+            }
+            .inner{
+                @include flex-w(50%);
+                padding: 5px 40px;
+                padding-left: 100px;
+                padding-right: 40px;
+                text-align: right;
+                position: relative;
+            }
+            &.is-active{
+                .inner{
+                    &::before{
+                        content: '';
+                        background-color: var(--sala-primary-navy, $primary_navy);
+                    }
+                }
+            }
+        }
+        .inner{
+            &::before{
+                content: '';
+                width: 2px;
+                position: absolute;
+                top: 0;
+                left: auto;
+                right: -1px;
+                height: 100%;
+                background-color: transparent;
+            }
+            &::after{
+                content: '';
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                top: 24px;
+                left: auto;
+                right: -5px;
+                background-color: var(--sala-neutral-white, $neutral_white);
+                border: 2px solid var(--sala-primary-navy, $primary_navy);
+                @include border-radius(50%);
+            }
+        }
+        .item:nth-child(2n + 1){
+            justify-content: flex-end;
+            .inner{
+                padding-right: 100px;
+                padding-left: 40px;
+                text-align: left;
+                &::before{
+                    left: -1px;
+                    right: auto;
+                }
+                &::after{
+                    left: -5px;
+                    right: auto;
+                }
+            }
+        }
+        .team{
+            margin-bottom: 24px;
+            img{
+                width: 50px;
+                height: 50px;
+                @include border-radius(50%);
+                margin-right: 10px;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        .time{
+            font-size: 14px;
+            color: var(--sala-primary-navy, $primary_navy);
+            margin-bottom: 10px;
+        }
+        .title{
+            margin-bottom: 12px;
+        }
+        .twitter{
+            font-size: 14px;
+            color: var(--sala-neutral-medium, $neutral_medium);
+            margin-bottom: 12px;
+        }
+        .date-line{
+            position: absolute;
+            top: 55%;
+            left: 0;
+            @include transform(rotate(-90deg));
+            transform-origin: left;
+            a{
+                @include typo(14px, 1.2, 500);
+                color: var(--sala-neutral-medium, $neutral_medium);
+                display: inline-block;
+                margin-right: 30px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:hover,
+                &.is-active{
+                    color: var(--sala-primary-navy, $primary_navy);
+                }
+            }
+        }
+    }
+    &.layout-03{
+        position: relative;
+        &::before{
+            content: '';
+            width: 4px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -1px;
+            height: 100%;
+            background-color: var(--sala-alway-dark, $neutral_dark);
+        }
+        .item{
+            margin-bottom: 50px;
+            .inner{
+                box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+                background-color: var(--sala-alway-white, $neutral_white);
+                padding: 28px;
+                @include border-radius(20px);
+                position: relative;
+                width: calc(50% - 60px);
+                &::before{
+                    content: '';
+                    background-color: var(--sala-alway-dark, $neutral_dark);
+                    width: 30px;
+                    height: 2px;
+                    display: block;
+                    position: absolute;
+                    top: 40px;
+                    right: -15px;
+                }
+                &::after{
+                    content: '';
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: 24px;
+                    left: auto;
+                    right: -76px;
+                    background-color: var(--sala-primary-navy, $primary_navy);
+                    border: 6px solid var(--sala-tone-yellow, $tone_yellow);
+                    @include border-radius(50%);
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .date{
+                position: absolute;
+                left: calc(100% + 120px);
+                .month{
+                    font-weight: 500;
+                    color: var(--sala-alway-dark, $neutral_dark);
+                    display: block;
+                }
+                .year{
+                    @include typo(40px, 1.2, 600);
+                    color: var(--sala-alway-dark, $neutral_dark);
+                }
+            }
+            .title{
+                color: var(--sala-alway-dark, $neutral_dark);
+            }
+            .desc{
+                color: var(--sala-alway-dark, $neutral_dark);
+                line-height: 1.44;
+            }
+            &:nth-child(2n + 1){
+                @include d-flex;
+                justify-content: flex-end;
+                .inner{
+                    &::before{
+                        content: '';
+                        right: auto;
+                        left: -15px;
+                    }
+                    &:after{
+                        right: auto;
+                        left: -74px;
+                    }
+                }
+                .date{
+                    right: calc(100% + 120px);
+                    left: auto;
+                }
+            }
+        }
+        .title{
+            margin-bottom: 12px;
+        }
+    }
+}
+@media (max-width:768px) {
+    .block-timeline{
+        &.layout-02{
+            &::before{
+                left: 0;
+                margin: 0;
+            }
+            .item .inner{
+                @include flex-w(100%);
+                text-align: left;
+                padding: 15px 0px 15px 40px !important;
+                &:before{
+                    left: 0;
+                    right: auto;
+                }
+                &:after{
+                    left: -4px;
+                    right: auto;
+                }
+            }
+            .date-line{
+                position: static;
+                @include transform(none);
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        }
+        &.layout-03{
+            &::before{
+                left: 0;
+            }
+            .item .inner{
+                width: calc(100% - 60px);
+                margin: 0 0 0 auto;
+                .date{
+                    position: static;
+                    margin: 0 0 10px;
+                }
+                &:before{
+                    left: -15px;
+                    right: auto;
+                    top: 37px;
+                }
+                &:after{
+                    right: auto;
+                    left: -74px;
+                }
+            }
+        }
+    }
+}

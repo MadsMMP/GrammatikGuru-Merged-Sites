@@ -1,0 +1,44 @@
+.coming-left{
+    .logo{
+        margin-bottom: 120px;
+        svg path{
+            fill: var(--sala-neutral-dark, #ffffff);
+        }
+    }
+    .heading{
+        margin-bottom: 24px;
+        .heading-title{
+            margin-top: 0;
+        }
+    }
+    form{
+        position: relative;
+        margin-bottom: 100px;
+        input[type="email"]{
+            height: 60px;
+            padding-right: 140px;
+        }
+        .field-input{
+            margin-bottom: 0;
+        }
+        .field-submit{
+            position: absolute;
+            top: 6px;
+            right: 6px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .coming-left{
+        .logo{
+            margin-bottom: 40px;
+        }
+        .heading .heading-title.size-xl{
+            font-size: 32px;
+        }
+        form{
+            margin-bottom: 30px;
+        }
+    }
+}

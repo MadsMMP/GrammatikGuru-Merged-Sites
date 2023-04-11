@@ -1,0 +1,43 @@
+.block-number{
+    .item{
+        padding: 34px;
+        border: 1px solid var(--sala-border-line, $border_line);
+        @include border-radius(20px);
+        text-align: center;
+        .title{
+            @include typo(16px, 1.5, 500);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .number{
+            @include typo(56px, 1.1, 600);
+            color: var(--sala-primary-navy, $primary_navy);
+            letter-spacing: -0.3em;
+            span{
+                display: inline-block;
+                letter-spacing: normal;
+            }
+            .first{
+                position: relative;
+                &:after{
+                    content: '';
+                    height: 46px;
+                    width: 6px;
+                    display: inline-block;
+                    vertical-align: -3px;
+                    background-color: var(--sala-primary-navy, $primary_navy);
+                    @include transform(rotate(20deg));
+                    margin: 0 10px;
+                }
+            }
+            .last{
+                font-size: 32px;
+            }
+        }
+    }
+}
+@media (max-width:992px) {
+    .block-number .item{
+        margin-bottom: 30px;
+    }
+}

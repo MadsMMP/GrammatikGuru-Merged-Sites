@@ -1,0 +1,123 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+    color: var(--sala-primary-dark, #111111);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.3;
+}
+
+h1 {
+    @include typo(40px, 1.3, 600);
+}
+
+h2 {
+    @include typo(32px, 1.3, 600);
+}
+
+h3,
+.h3 {
+    @include typo(24px, 1.3, 600);
+}
+
+h4 {
+    @include typo(18px, 1.3, 500);
+}
+
+h5 {
+    @include typo(16px, 1.3, 500);
+}
+
+h6 {
+    @include typo(14px, 1.3, 500);
+}
+
+ul {
+    list-style: none;
+    letter-spacing: -0.3em;
+    li {
+        letter-spacing: normal;
+    }
+}
+
+button,
+input,
+select {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    @include typo(16px, 21px, 400);
+    color: var(--sala-neutral-normal, #555555);
+    font-family: "Poppins", sans-serif;
+    background-color: var(--sala-neutral-white, #ffffff);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img,
+video {
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--sala-primary-dark, #111111);
+    &:hover {
+        color: var(--sala-primary-navy, #0057fc);
+    }
+}

@@ -1,0 +1,74 @@
+@mixin d-flex() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-w($w) {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 $w;
+    flex: 0 0 $w;
+    max-width: $w;
+    width: $w;
+}
+
+@mixin flex-direction($value) {
+    -webkit-flex-direction: $value;
+    -ms-flex-direction: $value;
+    flex-direction: $value;
+}
+
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+@mixin position(
+    $position,
+    $top: null,
+    $right: null,
+    $bottom: null,
+    $left: null,
+    $index: null
+) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $index;
+}
+
+@mixin font-height($fz, $lh) {
+    font-size: $fz;
+    line-height: calc($lh / $fz);
+}
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    -o-box-shadow: $value;
+    -ms-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin typo($fz, $lh, $fw) {
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -o-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+}

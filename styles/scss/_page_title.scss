@@ -1,0 +1,73 @@
+.page-title{
+    padding: 64px 0;
+    text-align: center;
+    .inner{
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .sub{
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--sala-neutral-dark, $neutral_dark);
+    }
+    .title{
+        font-size: 56px;
+        font-weight: 600;
+        line-height: 1.11;
+        margin-top: 4px;
+        span{
+            position: relative;
+            display: inline-block;
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 4px;
+                background-color: var(--sala-primary-navy, $primary_navy);
+                z-index: -1;
+            }
+        }
+    }
+    .desc{
+        color: var(--sala-neutral-normal, #555555);
+        font-size: 18px;
+        margin-top: 14px;
+        a{
+            color: var(--sala-primary-navy, $primary_navy);
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .button-wrap{
+        margin-top: 36px;
+    }
+    &.layout-02{
+        .title{
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title{
+        padding: 40px 0;
+        .title{
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title{
+        .title,
+        &.layout-02 .title{
+            font-size: 28px;
+        }
+        .desc{
+            font-size: 16px;
+        }
+    }
+}

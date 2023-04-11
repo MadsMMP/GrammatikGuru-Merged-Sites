@@ -1,0 +1,52 @@
+.block-review{
+    @include transform(translateY(66px));
+    .item{
+        padding: 24px;
+        @include border-radius(8px);
+        box-shadow: var(--sala-boxshadow-2);
+        background-color: var(--sala-neutral-white, $neutral_white);
+        margin-bottom: 30px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        .badge-review{
+            margin-bottom: 16px;
+        }
+        .content{
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+        .author{
+            @include d-flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .avatar{
+            @include flex-w(50px);
+            img{
+                width: 50px;
+                height: 50px;
+                @include border-radius(50%);
+            }
+        }
+        .info{
+            @include flex-w(calc(100% - 66px));
+        }
+        .name{
+            font-size: 18px;
+            color: var(--sala-neutral-dark, $neutral_dark);
+            margin-bottom: 4px;
+        }
+        .website{
+            @include typo(14px, 1.3, 500);
+            color: var(--sala-neutral-medium, $neutral_medium);
+        }
+    }
+}
+@media (max-width:992px) {
+    .block-review{
+        .item:last-child{
+            margin-bottom: 30px;
+        }
+    }
+}

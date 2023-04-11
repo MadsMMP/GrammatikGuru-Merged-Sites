@@ -1,0 +1,359 @@
+.heading {
+    max-width: 800px;
+    margin: 0 auto 60px;
+
+    svg {
+        margin-bottom: 32px;
+    }
+
+    &.align-left {
+        max-width: 100%;
+        margin: 0 0 60px 0;
+    }
+
+    .heading-sub {
+        font-weight: 500;
+        color: var(--sala-neutral-dark, $neutral_dark);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &.color-navy {
+            color: var(--sala-primary-navy, $primary_navy);
+        }
+
+        &+.heading-title {
+            margin-top: 12px;
+        }
+
+        &.size-xl {
+            font-size: 32px;
+        }
+
+        &.no-uppercase {
+            letter-spacing: normal;
+            text-transform: none;
+        }
+
+        &.layout-02 {
+            background-color: var(--sala-tone-yellow, $tone_yellow);
+            color: var(--sala-alway-dark, $neutral_dark);
+            display: inline-block;
+            padding: 9px 20px;
+            @include border-radius(20px);
+            @include typo(14px, 1.4, 600);
+        }
+
+        &.w600 {
+            font-weight: 600;
+        }
+    }
+
+    .heading-title {
+        @include typo(32px, 1.25, 600);
+        position: relative;
+        z-index: 0;
+
+        &.size-xl {
+            font-size: 56px;
+        }
+
+        &.size-xxl {
+            font-size: 64px;
+        }
+
+        &.size-xxxl {
+            font-size: 72px;
+        }
+
+        &.size-xxxxl {
+            font-size: 84px;
+        }
+
+        &.size-l {
+            font-size: 40px;
+        }
+
+        &.size-m {
+            font-size: 24px;
+        }
+
+        &.w400 {
+            font-weight: 400;
+        }
+
+        &.w500 {
+            font-weight: 500;
+        }
+
+        &.mb30 {
+            margin-bottom: 30px;
+        }
+
+        span,
+        a {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: var(--sala-primary-navy, $primary_navy);
+                z-index: -1;
+            }
+
+            &.border-yellow:after {
+                background-color: var(--sala-tone-yellow, $tone_yellow);
+            }
+
+            &.no-underline:after {
+                content: '';
+                display: none;
+            }
+        }
+
+        a {
+            color: var(--sala-primary-navy, $primary_navy);
+
+            &:hover {
+                color: var(--sala-tone-blue, $tone_blue);
+            }
+        }
+
+        &.font-second {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 84px;
+            font-weight: 900;
+
+            span:after {
+                height: 6px;
+                bottom: 9px;
+            }
+        }
+
+        &.font-third {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        span {
+            &.background-01 {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -40%;
+                    left: -25%;
+                    width: 180%;
+                    height: 180%;
+                    background-image: url('/assets/images/hea-08.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    z-index: -1;
+                }
+            }
+
+            &.background-02 {
+                background-image: url('/assets/images/hep-12.svg');
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                background-size: contain;
+                padding-bottom: 8px;
+            }
+
+            &.background-03 {
+                background-image: url('/assets/images/hep-24.png');
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                background-size: contain;
+                padding-bottom: 8px;
+            }
+
+            &.background-04 {
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -35px;
+                    left: -40px;
+                    right: -40px;
+                    bottom: -15px;
+                    background-image: url('/assets/images/hst-02.svg');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
+                    z-index: -1;
+                }
+            }
+        }
+
+        &.color-navy-2 {
+            color: var(--sala-primary-navy-2, $primary_navy_2);
+        }
+    }
+
+    .heading-desc {
+        @include typo(18px, 1.44, 400);
+        margin-top: 12px;
+
+        &.size-l {
+            font-size: 24px;
+        }
+
+        a {
+            color: var(--sala-primary-navy, $primary_navy);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        p {
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &.w600 {
+            font-weight: 600;
+        }
+    }
+
+    .heading-icon-top {
+        height: 50px;
+        width: 50px;
+        @include border-radius(50%);
+        @include d-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 28px;
+        color: var(--sala-alway-white, $neutral_white);
+    }
+
+    .heading-icon-bottom {
+        margin-top: 40px;
+    }
+
+    &.heading-alway-white {
+
+        .heading-sub,
+        .heading-title,
+        .heading-desc {
+            color: var(--sala-alway-white, $neutral_white);
+        }
+
+        .heading-desc.color-white-normal {
+            color: var(--sala-alway-neutral-white, $neutral_white);
+        }
+    }
+
+    &.heading-alway-dark {
+
+        .heading-sub,
+        .heading-title,
+        .heading-desc {
+            color: var(--sala-alway-dark, $neutral_dark);
+        }
+
+        .heading-sub.color-navy {
+            color: var(--sala-primary-navy, $primary_navy);
+        }
+    }
+
+    &.mg0 {
+        margin: 0;
+    }
+
+    &.mb32 {
+        margin-bottom: 32px;
+    }
+
+    &.mb24 {
+        margin-bottom: 24px;
+    }
+
+    &.mb100 {
+        margin-bottom: 100px;
+    }
+
+    ul {
+        margin-top: 24px;
+
+        li {
+            @include typo(24px, 1.33, 600);
+            color: var(--sala-neutral-dark, $neutral_dark);
+
+            &+li {
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .heading {
+        margin-bottom: 30px;
+
+        &.align-left {
+            margin-bottom: 30px;
+        }
+
+        .heading-title {
+            &.font-second {
+                font-size: 64px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .heading {
+        .heading-sub {
+            &.size-xl {
+                font-size: 24px;
+            }
+        }
+
+        .heading-title {
+            font-size: 24px;
+
+            &.size-l {
+                font-size: 32px;
+            }
+
+            &.font-second,
+            &.font-third {
+                font-size: 42px;
+            }
+
+            &.size-xl,
+            &.size-xxl,
+            &.size-xxxl,
+            &.size-xxxxl {
+                font-size: 40px;
+            }
+
+            br {
+                display: none;
+            }
+
+            span.background-04 {
+                &::before {
+                    content: '';
+                    display: none;
+                }
+            }
+        }
+    }
+}
